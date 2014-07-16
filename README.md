@@ -15,7 +15,7 @@ Environment:
 > 1. ruby 2.1.0 
 > 2. rails 4.0.0 above
 
-Install:
+Install(You must have installed the ruby and rails, you can google it.):
 > 1. git clone https://github.com/chengpohi/nutch-web/
 > 2. cd nutch-web
 > 3. bundle install
