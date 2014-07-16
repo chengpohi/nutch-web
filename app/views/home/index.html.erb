@@ -1,0 +1,74 @@
+<div class="container" style="text-align: center;text-align: center;border: 1px solid #e1e1e8;border-radius: 4px;">
+<h1>爬虫管理</h1>
+</div>
+
+<div class="container" style="border: 1px solid #e1e1e8; border-radius: 4px;padding: 20px">
+<div class="col-xs-3"> <!-- required for floating -->
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs tabs-left">
+      <li class="active"><a href="#home" data-toggle="tab">爬虫状态</a></li>
+      <li><a id="crawl" href="#crawl" data-toggle="modal" data-target="#editorModal">Crawl.sh</a></li>
+      <li><a id="urlinsert" href="#profile" data-toggle="modal" data-target="#editorModal">网址插入</a></li>
+      <li><a id="regexUrl" href="#regexUrl" data-toggle="modal" data-target="#editorModal">网站过滤</a></li>
+      <li><a id="urlCrawlDiv"href="#urlCrawlDiv" data-toggle="modal" data-target="#editorModal">网站爬取元素</a></li>
+      <li><a id="urlParseDiv" href="#urlParseDiv"data-toggle="modal" data-target="#editorModal" >网站解析元素</a></li>
+      <li><a id="urlFilter" href="#urlFilterDiv" data-toggle="modal" data-target="#editorModal">索引网址过滤</a></li>
+      <li><a id="" href="" data-toggle="modal" data-target="#login">更改密码</a></li>
+      <li><%= link_to '退出系统', destroy_user_session_path %></li>
+    </ul>
+</div>
+
+
+<div class="col-xs-9">
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="home">
+		<% if @status == 0 %>
+					<a class="btn btn-large btn-success" href="/home/start" data-no-turbolink='true'>
+					<i class="fa fa-play"></i>
+					Start</a>
+
+					<a class="btn btn-large btn-primary" href="/home/resume" data-no-turbolink='true' >
+					<i class="fa fa-refresh fa-spin"></i>
+					Resume</a>
+		<% else %>
+					<button class="btn btn-large btn-warning disabled" title="aa" href="/home/stop"data-no-turbolink='true' data-loading-text="">
+					<i class='icon-spinner icon-spin icon-large'> </i>
+					Fetching</button>
+					<a class="btn btn-large btn-warning " href="/home/stop"data-no-turbolink='true' data-loading-text="">
+					<i class="fa fa-pause"></i>
+					Stop</a>
+
+
+					<a class="btn btn-large btn-primary" href="/home/reboot" data-no-turbolink='true' >
+					<i class="fa fa-refresh"></i>
+					Restart</a>
+
+
+		<% end %>
+
+		
+		<a class="btn btn-large btn-info" href="http://115.28.77.207" target="_blank" data-no-turbolink='true' >
+		<i class="fa fa-search"></i>
+		Search</a>
+		<div id="info" class="alert alert-danger bs-alert-old-docs">
+			<label for="index_count">索引总数:</label>
+			<div name="index_count"> 当前时间:<%= @index_count %> 条 </div>
+			<label for="index_count">数据库总数:</label>
+			<div name="index_count"> 当前时间:<%= @index_count %> 条 </div>
+		</div>
+	</div>
+      </div>
+	<ul class="nav nav-tabs" id="myTab">
+	  <li class="active"><a href="#logs">Crawl Logs</a></li>
+	</ul>
+
+	<div class="tab-content">
+	  <div class="tab-pane active" id="logs">
+		<textarea id="crawl-logs" disabled="disabled" style="resize: none;width: 100%; height: 180px"></textarea>
+	  </div>
+	</div>
+
+</div>  
+</div>
+

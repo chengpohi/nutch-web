@@ -1,0 +1,25 @@
+<div class="container" style="padding-left:15px;padding-right:15px; padding-top:60px">
+
+  <div style="max-width: 330px; padding: 15px; margin:0 auto;border: 2px solid #ddd; padding-right: 25px;box-shadow: 0px 0px 20px #999; opacity: 0.8" role="form">
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+      <h2 class="form-signin-heading" style="text-align:center">登录</h2>
+
+        <%= f.email_field :email, :autofocus => true, :placeholder => '邮箱', :class => 'form-control' %>
+
+
+	  <%= f.password_field :password, :placeholder => '密码',  :class => 'form-control'%>
+
+	    <% if devise_mapping.rememberable? -%>
+	        <div>
+		        <label class="checkbox">
+			        <%= f.check_box :remember_me %>
+				      记住我
+				      </label>
+			    </div>
+		  <% end -%>
+
+		    <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 100%">登录</button>
+		    <% end %>
+		    </div>
+  </div>    
