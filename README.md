@@ -2,6 +2,7 @@ nutch-web
 =========
 
 ###This is a nutch web manager
+> This a web manager based on **rails 3.0**, It used the bootstrap 3.0 ui.
 
 ---------------------------------------
 Supports:
